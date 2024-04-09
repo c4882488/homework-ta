@@ -12,8 +12,12 @@ folders = [content for content in all_contents if os.path.isdir(os.path.join(pat
 folders =[folder.split("_")[0] for folder in folders]
 # print(len(folders), folders)
 
-
 copy_path = "./result"
+
+# 檢查資料夾是否已存在
+if not os.path.exists(copy_path):
+    # 如果資料夾不存在，則創建它
+    os.mkdir(copy_path)
 
 # 獲取路徑下的所有內容
 all_contents = os.listdir(copy_path)

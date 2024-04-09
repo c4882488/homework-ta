@@ -10,6 +10,11 @@ search_dir = "./homework-2"
 # 指定要複製到的目錄
 dest_dir = "./result"
 
+# 檢查資料夾是否已存在
+if not os.path.exists(dest_dir):
+    # 如果資料夾不存在，則創建它
+    os.mkdir(dest_dir)
+
 def copy_files(dirpath):
     for dirpath, dirnames, filenames in os.walk(dirpath):
         for filename in filenames:
