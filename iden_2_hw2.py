@@ -267,9 +267,9 @@ default_select_comments_count = [0, 1]
 double_check = ['C110156222', 'C110156240', 'C110156215', 'C109179183']
 # ---
 # 倍率設定
-Similar_magnification = 0.18
-simplified_chinese_magnification = 0.16
-double_check_magnification = 0.03
+Similar_magnification = 0.15
+simplified_chinese_magnification = 0.15
+double_check_magnification = 0.04
 
 for i in range(len(files)):
     double_check_score = 0
@@ -396,12 +396,12 @@ for index, row in df.iterrows():
     score = score*(1-row["是否為簡字基數"] * row["簡字倍率"])
     score = score*(1-row["雙重檢查"] * row["雙重檢查倍率"])
 
-    if row["相似基數"] == 0 and row["是否為簡字基數"] == 0:
-        score += row["平均註解字數_mixmax"]
-        score += row["代碼行數_mixmax"]
-        score += row["使用的import數量_mixmax"]
-        score += row["sum_print_count_mixmax"]
-        score += row["sum_show_count_mixmax"]
+    # if row["相似基數"] == 0 and row["是否為簡字基數"] == 0:
+    score += row["平均註解字數_mixmax"]
+    score += row["代碼行數_mixmax"]
+    score += row["使用的import數量_mixmax"]
+    score += row["sum_print_count_mixmax"]
+    score += row["sum_show_count_mixmax"]
     # 分數四捨五入到整數
     score = round(score)
     df.loc[index, "分數"] = score

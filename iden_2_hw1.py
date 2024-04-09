@@ -267,8 +267,8 @@ default_select_comments_count = [5, 0]
 
 # ---
 # 倍率設定
-Similar_magnification = 0.3
-simplified_chinese_magnification = 0.15
+Similar_magnification = 0.15
+simplified_chinese_magnification = 0.1
 
 for i in range(len(files)):
 
